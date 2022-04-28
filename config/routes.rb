@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   # resources :shirts # all 7 REST actions in one go
   get '/shirts', to: 'shirts#index'
   get '/shirts/:id', to: 'shirts#show'
+
+  # get '/shirts/:id/new', to: 'shirts#new' ignore, working with JSON only
 end

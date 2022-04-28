@@ -21,6 +21,8 @@ class ShirtsController < ApplicationController
     end
 
     def new # GET - Send HTML form for creating a new item (shirt), '/shirts/:id/new'
+        # ignoring for now
+        render html: "Directly hit with a post request containing {name, size}"
     end
 
     def create # POST - create new item, '/shirts/:id'
