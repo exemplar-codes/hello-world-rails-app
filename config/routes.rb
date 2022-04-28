@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   # DSL => _VERB_ "_route_", to: "_action_"
   root "application#hello"
 
+  resources :shirts # all 7 REST actions in one go
 end
