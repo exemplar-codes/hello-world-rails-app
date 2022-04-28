@@ -31,7 +31,10 @@ class ShirtsController < ApplicationController
         # here we'd need to parse the request body
         # this is also parsed and kept in params
 
-        render json: { params: params }
+        new_shirt = { id: @shirt_arr.length + 1, lengthname: params.name, size: params.size }
+        @shirt_arr.push(new_shirt)
+
+        render json: { message: "New shirt added!" }
     end
 
     def destroy # DELETE - delete item with id, '/shirts/:id'
