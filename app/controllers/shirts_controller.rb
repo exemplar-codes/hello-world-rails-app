@@ -4,6 +4,8 @@ class ShirtsController < ApplicationController
         # So I can focus on Rails without ActiveRecord (the ORM) or DB setup
     end
 
+    skip_before_action :verify_authenticity_token
+
     def index # GET - list of all items
         render json: { shirts: @shirts_arr }
     end
@@ -25,7 +27,11 @@ class ShirtsController < ApplicationController
         render html: "Directly hit with a post request containing {name, size}"
     end
 
-    def create # POST - create new item, '/shirts/:id'
+    def create # POST - create new item, '/shirts/'
+        # here we'd need to parse the request body
+        # this is also parsed and kept in params
+
+        render json: { params: params }
     end
 
     def destroy # DELETE - delete item with id, '/shirts/:id'

@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get '/shirts/:id', to: 'shirts#show'
 
   # get '/shirts/:id/new', to: 'shirts#new' ignore, working with JSON only
+  post '/shirts/', to: 'shirts#create'
 end
