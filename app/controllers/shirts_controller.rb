@@ -9,6 +9,15 @@ class ShirtsController < ApplicationController
     end
 
     def show # GET - specific (item with matching id or any other attribute), '/shirts/:id'
+        # the param string :id will be parsed and saved in 'params' object
+        desired_id = params[:id].to_i
+        desired_shirt = @shirts_arr.find { |shirt| shirt[:id] == desired_id }
+
+        if desired_shirt
+            render json: { shirt: desired_shirt }
+        else
+            render json: { message: "Shirt not found" }
+        end
     end
 
     def new # GET - Send HTML form for creating a new item (shirt), '/shirts/:id/new'
