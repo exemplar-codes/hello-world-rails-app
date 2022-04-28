@@ -1,5 +1,5 @@
 class ShirtsController < ApplicationController
     def index
-        render html: "All shirts"
+        render json: { shirts: "All shirts" }
     end
 end
